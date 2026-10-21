@@ -1,0 +1,32 @@
+{
+  "checked_on": "2026-10-21",
+  "timezone": "Europe/Warsaw",
+  "method": "Maintainer-reported manual acceptance in chat after the local test handoff",
+  "browser": "Brave",
+  "environment": "Original local lab with its preserved operator identity profile",
+  "source_fix_commit": "aba6eb823fd41023787cfe1b88caf47c922f2b8b",
+  "manual_results": {
+    "existing_passkey_sign_in": "passed",
+    "Pods": "passed",
+    "Deployments": "passed",
+    "Services": "passed"
+  },
+  "preflight": {
+    "checked_at": "2026-10-21T05:47:45.898121+00:00",
+    "ready_containers": 16,
+    "total_containers": 16,
+    "healthy_application_checks": 4,
+    "verified_source_pins": 6,
+    "identity_profile_reset": false,
+    "recovery_run": "20261021T054630Z-c549ac"
+  },
+  "scope_limits": [
+    "The agent did not operate or directly observe the real authenticator.",
+    "The maintainer confirmed sign-in and these three resource views; no new resource counts or HTTP statuses were reported.",
+    "Denied routes and mutations were not repeated in this manual acceptance; see the separate 2026-10-20 automated evidence.",
+    "This was not a new full-portfolio scenario run, Google sign-in test, recovery ceremony or production validation.",
+    "Startup required scoped manual recovery of ephemeral state; automatic restart recovery remains open as asl-63y."
+  ],
+  "prior_component_validation": "viewer-validation.json",
+  "local_only": true
+}

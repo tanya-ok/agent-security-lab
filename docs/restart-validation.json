@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-10-21T06:04:42.932483+00:00",
+  "method": "Controlled stop/start of the owned security VM, normal launcher up and post-restart scenario run",
+  "restart_run": "20261021T055738Z-11b07f",
+  "health_run": "20261021T060436Z-71acc5",
+  "component_commit": "31ccea1cb99749e49b69e6d3bc5b3350adafd314",
+  "recovery_module_sha256": "64ccc489eb02e43e79eb56246c8be6f2717a5316d25c79cabf5646259b334903",
+  "security_vm_observed_stopped_before_start": true,
+  "grc_vm_left_running": true,
+  "namespaces_deleted": false,
+  "identity_profile_bytes_unchanged": true,
+  "operator_ready_passkey_and_viewer_approval_read_back_after_scenarios": true,
+  "manual_authenticator_repeated_after_this_restart": false,
+  "workload_registry_and_public_bundle_restored_automatically": true,
+  "ready_containers": 16,
+  "healthy_application_checks": 4,
+  "verified_source_pins": 6,
+  "security_scenarios_passed": 18,
+  "security_report_sha256": "e052464ef9989d6ab0d0e288b5bb801d8fbfcaa72d62d578dfbdac5978cbe71e",
+  "launcher_python_tests": 90,
+  "launcher_javascript_tests": 5,
+  "new_restart_regression_tests": 14,
+  "scope_limits": [
+    "No new full-portfolio scenario run",
+    "No manual authenticator automation or account reset",
+    "Unknown trust state, ownership mismatch or failed native policy stops startup",
+    "Normal down still removes disposable security namespaces; this is preserved-VM restart recovery, not durable production identity"
+  ],
+  "remote_write": false
+}

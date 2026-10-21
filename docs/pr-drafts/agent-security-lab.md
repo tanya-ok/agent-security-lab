@@ -1,0 +1,5 @@
+# agent-security-lab PR drafts
+
+## feat: Introduce Agent Security Lab
+
+Bring six security projects into one local browser workflow with owned Lima/k3s/containerd VMs, Buildah images, ZITADEL passkey access, opt-in organization administration, CISO Assistant SSO, health checks and bounded service controls. Recorded local acceptance after SSO configuration passed 24 command stages plus retained-SSO and final live-access checks, preserving the owner profile; 131 Python tests, 5 JavaScript tests, Ruff, strict documentation and local privacy scans passed. Existing physical-passkey and SSO access were manually accepted separately. Source locks select the prepared local bases, viewer and AI Assurance commits; the full live run predates the current source and workflow changes. Add opt-in Pages delivery with strict documentation, artifact checks and minimal permissions. Repository/base setup, source access and reviewed dependency pins remain publication gates; publication is held, no assurance profile is installed and GitHub CI has not run.

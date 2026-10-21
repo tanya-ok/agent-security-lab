@@ -1,0 +1,306 @@
+{
+  "schema": 1,
+  "verified_at": "2026-10-15T08:51:24.574737+00:00",
+  "unit_tests": 44,
+  "observation": {
+    "checked_at": "2026-10-15T08:51:10.730407+00:00",
+    "started_at": "2026-10-15T08:51:10.237799+00:00",
+    "refresh_seconds": 15,
+    "services": [
+      {
+        "key": "viewer",
+        "name": "Security viewer",
+        "url": "http://localhost:4466/c/main/security-lab",
+        "checked_at": "2026-10-15T08:51:10.350499+00:00",
+        "state": "reachable",
+        "http_status": 200,
+        "latency_ms": 1,
+        "detail": "HTTP responds; sign-in is a separate check"
+      },
+      {
+        "key": "identity",
+        "name": "ZITADEL discovery",
+        "url": "http://localhost:4467/.well-known/openid-configuration",
+        "checked_at": "2026-10-15T08:51:10.350592+00:00",
+        "state": "healthy",
+        "http_status": 200,
+        "latency_ms": 13,
+        "detail": "OIDC discovery issuer verified; sign-in is a separate check"
+      },
+      {
+        "key": "login",
+        "name": "ZITADEL Login",
+        "url": "http://localhost:4467/ui/v2/login/healthy",
+        "checked_at": "2026-10-15T08:51:10.350653+00:00",
+        "state": "healthy",
+        "http_status": 200,
+        "latency_ms": 10,
+        "detail": "Application readiness response"
+      },
+      {
+        "key": "grc",
+        "name": "CISO Assistant",
+        "url": "https://localhost:18443/api/health/",
+        "checked_at": "2026-10-15T08:51:10.350734+00:00",
+        "state": "healthy",
+        "http_status": 200,
+        "latency_ms": 35,
+        "detail": "Application health response"
+      },
+      {
+        "key": "dashboard",
+        "name": "Engineering OS",
+        "url": "http://127.0.0.1:18766/api/health",
+        "checked_at": "2026-10-15T08:51:10.351994+00:00",
+        "state": "healthy",
+        "http_status": 200,
+        "latency_ms": 2,
+        "detail": "Application health response"
+      }
+    ],
+    "workloads": [
+      {
+        "name": "security-lab",
+        "vm_state": "Running",
+        "state": "ready",
+        "containers": [
+          {
+            "namespace": "security-lab",
+            "pod": "authz-7d54d4bf98-cpj59",
+            "name": "authz",
+            "phase": "Running",
+            "ready": true,
+            "image": "localhost/security-lab/auth@sha256:418696369bb7629d82ce023119ff6bcf889aee1c5328f2c940ad56fda9bc80a9",
+            "version": null,
+            "restarts": 0
+          },
+          {
+            "namespace": "security-lab",
+            "pod": "authz-strict-dcd4998b6-djdn9",
+            "name": "authz-strict",
+            "phase": "Running",
+            "ready": true,
+            "image": "localhost/security-lab/auth@sha256:418696369bb7629d82ce023119ff6bcf889aee1c5328f2c940ad56fda9bc80a9",
+            "version": null,
+            "restarts": 0
+          },
+          {
+            "namespace": "security-lab",
+            "pod": "fhir-6756f5679f-cw99f",
+            "name": "fhir",
+            "phase": "Running",
+            "ready": true,
+            "image": "localhost/security-lab/fhir@sha256:3aa2bc32c742d92e98c10f9b03cc175729dda0b46f3a40b72b0a9e9f65498766",
+            "version": null,
+            "restarts": 2
+          },
+          {
+            "namespace": "security-lab",
+            "pod": "headlamp-75658bb4fc-xwspz",
+            "name": "headlamp",
+            "phase": "Running",
+            "ready": true,
+            "image": "ghcr.io/headlamp-k8s/headlamp@sha256:db3f0e0fc58d358d41daa3fe7fc852437552c7ee873c3645470f7b86a8e0db49",
+            "version": "v0.45.0",
+            "restarts": 0
+          },
+          {
+            "namespace": "security-lab",
+            "pod": "notes-a-6787695dc6-zn2pw",
+            "name": "notes-a",
+            "phase": "Running",
+            "ready": true,
+            "image": "localhost/security-lab/auth@sha256:418696369bb7629d82ce023119ff6bcf889aee1c5328f2c940ad56fda9bc80a9",
+            "version": null,
+            "restarts": 0
+          },
+          {
+            "namespace": "security-lab",
+            "pod": "notes-b-cb84689b4-mxd42",
+            "name": "notes-b",
+            "phase": "Running",
+            "ready": true,
+            "image": "localhost/security-lab/auth@sha256:418696369bb7629d82ce023119ff6bcf889aee1c5328f2c940ad56fda9bc80a9",
+            "version": null,
+            "restarts": 0
+          },
+          {
+            "namespace": "security-lab",
+            "pod": "notes-rogue-6547877d75-pb4gq",
+            "name": "notes-rogue",
+            "phase": "Running",
+            "ready": true,
+            "image": "localhost/security-lab/auth@sha256:418696369bb7629d82ce023119ff6bcf889aee1c5328f2c940ad56fda9bc80a9",
+            "version": null,
+            "restarts": 0
+          },
+          {
+            "namespace": "security-lab-identity",
+            "pod": "identity-postgres-6649698d7d-4cx5b",
+            "name": "postgres",
+            "phase": "Running",
+            "ready": true,
+            "image": "docker.io/library/postgres@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826",
+            "version": "17-bookworm",
+            "restarts": 0
+          },
+          {
+            "namespace": "security-lab-identity",
+            "pod": "zitadel-66bcfdfc4c-jjq2c",
+            "name": "zitadel",
+            "phase": "Running",
+            "ready": true,
+            "image": "ghcr.io/zitadel/zitadel@sha256:90a3045b80a2b5b395e1e770302076906af3a5911225af7c464b4f3bd00d0a1b",
+            "version": "v4.19.4",
+            "restarts": 2
+          },
+          {
+            "namespace": "security-lab-identity",
+            "pod": "zitadel-login-f666f897d-nzfsm",
+            "name": "zitadel-login",
+            "phase": "Running",
+            "ready": true,
+            "image": "ghcr.io/zitadel/zitadel-login@sha256:93ffd1395b827f685ba29c02fa70aee881fc21102519c4e2bbb0b89c0e00f42c",
+            "version": "v4.19.4",
+            "restarts": 0
+          },
+          {
+            "namespace": "spire-system",
+            "pod": "spire-agent-v5lfl",
+            "name": "spire-agent",
+            "phase": "Running",
+            "ready": true,
+            "image": "ghcr.io/spiffe/spire-agent@sha256:41b0dcd8b258a69db9e2768292a060766fb76fd866e4bc925849981ea1b825ff",
+            "version": "1.15.3",
+            "restarts": 0
+          },
+          {
+            "namespace": "spire-system",
+            "pod": "spire-server-98bddcf4d-8pd9h",
+            "name": "spire-server",
+            "phase": "Running",
+            "ready": true,
+            "image": "ghcr.io/spiffe/spire-server@sha256:4082f30d3e0ddc4000a171392c4ea174345ee44d161ee917c70b97b2ecfba141",
+            "version": "1.15.3",
+            "restarts": 0
+          }
+        ],
+        "missing_containers": []
+      },
+      {
+        "name": "it-grc",
+        "vm_state": "Running",
+        "state": "ready",
+        "containers": [
+          {
+            "namespace": "it-grc",
+            "pod": "it-grc-ciso-assistant-backend-844d96676d-g5frn",
+            "name": "backend",
+            "phase": "Running",
+            "ready": true,
+            "image": "ghcr.io/intuitem/ciso-assistant-community/backend@sha256:15f31d4eacd3b60e4c08dca206f608adb6db44fc8a0a1f9ad81bf7edc9f2e410",
+            "version": "v4.1.1",
+            "restarts": 3
+          },
+          {
+            "namespace": "it-grc",
+            "pod": "it-grc-tls-677d665c7d-c28zt",
+            "name": "caddy",
+            "phase": "Running",
+            "ready": true,
+            "image": "docker.io/library/caddy@sha256:0c994536bddb66445885237f1a5dcc1916bccea922661c76b4e9fc24061f9b52",
+            "version": "2.11.4",
+            "restarts": 3
+          },
+          {
+            "namespace": "it-grc",
+            "pod": "it-grc-ciso-assistant-frontend-695b66c9c8-pvzdh",
+            "name": "frontend",
+            "phase": "Running",
+            "ready": true,
+            "image": "ghcr.io/intuitem/ciso-assistant-community/frontend@sha256:4a0bd757b9eb5d05555a048f498401d3bde6f8bead554fa12d17fbc099907a7b",
+            "version": "v4.1.1",
+            "restarts": 3
+          },
+          {
+            "namespace": "it-grc",
+            "pod": "it-grc-ciso-assistant-backend-844d96676d-g5frn",
+            "name": "huey",
+            "phase": "Running",
+            "ready": true,
+            "image": "ghcr.io/intuitem/ciso-assistant-community/backend@sha256:15f31d4eacd3b60e4c08dca206f608adb6db44fc8a0a1f9ad81bf7edc9f2e410",
+            "version": "v4.1.1",
+            "restarts": 3
+          }
+        ],
+        "missing_containers": []
+      }
+    ],
+    "projects": [
+      {
+        "name": "mcp-svid-auth",
+        "commit": "84a38c41a5491d254962efe5862bff25e5c4b215",
+        "version": "0.1.0",
+        "integrity": "verified",
+        "kind": "application"
+      },
+      {
+        "name": "mcp-spiffe-bridge",
+        "commit": "ba5a6be7eaa0d05c110bd2af46920fb72a820e34",
+        "version": "0.0.1",
+        "integrity": "verified",
+        "kind": "library"
+      },
+      {
+        "name": "hipaa-fhir-mcp",
+        "commit": "61c844ae2ee78c9eb928437d8af2dcfd2671db15",
+        "version": "0.4.0",
+        "integrity": "verified",
+        "kind": "application"
+      },
+      {
+        "name": "it-grc",
+        "commit": "b7ac7b36fc0f875a3c7f571d2438c49b0fe336f0",
+        "version": null,
+        "integrity": "verified",
+        "kind": "application"
+      },
+      {
+        "name": "engineering-os",
+        "commit": "abcabe10ead5151550475255ae9fbd87263d7278",
+        "version": "0.1.0",
+        "integrity": "verified",
+        "kind": "application"
+      },
+      {
+        "name": "ai-assurance",
+        "commit": "d61186dcc3388c9cc761e4ec638ec5ce26a411ae",
+        "version": "0.2.0",
+        "integrity": "verified",
+        "kind": "experiment"
+      }
+    ],
+    "last_demo": {
+      "run_id": "20261015T083304Z-e03516",
+      "state": "passed",
+      "started_at": "2026-10-15T08:33:04.925568+00:00",
+      "finished_at": "2026-10-15T08:38:37.863665+00:00"
+    }
+  },
+  "browser_acceptance": {
+    "navigation_from_overview": true,
+    "dashboard_stop_detected": true,
+    "dashboard_recovery_detected": true,
+    "health_count_transition": [
+      "4/4",
+      "3/4",
+      "4/4"
+    ],
+    "expanded_image_digest_visible": true,
+    "expanded_details_survive_auto_refresh": true
+  },
+  "source_worktrees_unchanged": true,
+  "default_lima_states_unchanged": true,
+  "foreign_host_http": 403,
+  "scope": "Read-only local observations; no new full demo or compliance attestation"
+}

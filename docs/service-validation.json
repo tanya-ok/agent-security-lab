@@ -1,0 +1,134 @@
+{
+  "schema": 1,
+  "verified_at": "2026-10-15T11:18:56.511053+00:00",
+  "unit_tests": 59,
+  "successful_browser_restarts": {
+    "dashboard": {
+      "run_id": "20261015T111455Z-d9aba6",
+      "started_at": "2026-10-15T11:14:55.230842+00:00",
+      "finished_at": "2026-10-15T11:14:55.478515+00:00",
+      "state": "passed"
+    },
+    "fhir": {
+      "run_id": "20261015T111818Z-af6216",
+      "started_at": "2026-10-15T11:18:18.815010+00:00",
+      "finished_at": "2026-10-15T11:18:19.917637+00:00",
+      "state": "passed"
+    },
+    "grc-backend": {
+      "run_id": "20261015T111604Z-42c673",
+      "started_at": "2026-10-15T11:16:04.193765+00:00",
+      "finished_at": "2026-10-15T11:16:05.513723+00:00",
+      "state": "passed"
+    },
+    "zitadel-login": {
+      "run_id": "20261015T111646Z-cfd88b",
+      "started_at": "2026-10-15T11:16:46.519089+00:00",
+      "finished_at": "2026-10-15T11:16:56.285579+00:00",
+      "state": "passed"
+    }
+  },
+  "log_targets_verified": {
+    "authz": {
+      "sampled_lines": 0,
+      "hidden_lines": 0,
+      "diagnostic_signals": 0
+    },
+    "authz-strict": {
+      "sampled_lines": 0,
+      "hidden_lines": 0,
+      "diagnostic_signals": 0
+    },
+    "fhir": {
+      "sampled_lines": 1,
+      "hidden_lines": 0,
+      "diagnostic_signals": 1
+    },
+    "headlamp": {
+      "sampled_lines": 0,
+      "hidden_lines": 0,
+      "diagnostic_signals": 0
+    },
+    "notes-a": {
+      "sampled_lines": 0,
+      "hidden_lines": 0,
+      "diagnostic_signals": 0
+    },
+    "notes-b": {
+      "sampled_lines": 0,
+      "hidden_lines": 0,
+      "diagnostic_signals": 0
+    },
+    "notes-rogue": {
+      "sampled_lines": 0,
+      "hidden_lines": 0,
+      "diagnostic_signals": 0
+    },
+    "postgres": {
+      "sampled_lines": 6,
+      "hidden_lines": 6,
+      "diagnostic_signals": 0
+    },
+    "zitadel": {
+      "sampled_lines": 0,
+      "hidden_lines": 0,
+      "diagnostic_signals": 0
+    },
+    "zitadel-login": {
+      "sampled_lines": 7,
+      "hidden_lines": 6,
+      "diagnostic_signals": 1
+    },
+    "spire-server": {
+      "sampled_lines": 1,
+      "hidden_lines": 1,
+      "diagnostic_signals": 0
+    },
+    "spire-agent": {
+      "sampled_lines": 4,
+      "hidden_lines": 1,
+      "diagnostic_signals": 3
+    },
+    "grc-backend": {
+      "sampled_lines": 100,
+      "hidden_lines": 91,
+      "diagnostic_signals": 9
+    },
+    "grc-huey": {
+      "sampled_lines": 100,
+      "hidden_lines": 100,
+      "diagnostic_signals": 0
+    },
+    "grc-frontend": {
+      "sampled_lines": 0,
+      "hidden_lines": 0,
+      "diagnostic_signals": 0
+    },
+    "grc-tls": {
+      "sampled_lines": 1,
+      "hidden_lines": 0,
+      "diagnostic_signals": 1
+    },
+    "viewer": {
+      "sampled_lines": 0,
+      "hidden_lines": 0,
+      "diagnostic_signals": 0
+    },
+    "dashboard": {
+      "sampled_lines": 14,
+      "hidden_lines": 7,
+      "diagnostic_signals": 7
+    }
+  },
+  "live_rejections": {
+    "protected_restart": 409,
+    "unknown_service": 400,
+    "foreign_origin": 403
+  },
+  "ready_containers": 16,
+  "application_checks_passed": 4,
+  "source_worktrees_unchanged": true,
+  "default_lima_states_unchanged": true,
+  "full_scenario_suite_rerun": false,
+  "raw_log_content_exported": false
+}

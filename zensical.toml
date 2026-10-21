@@ -1,0 +1,34 @@
+[project]
+site_name = "Agent Security Lab"
+site_description = "Passkeys for people, short-lived identity for agents, evidence in one local lab"
+site_author = "Tanya Babitskaya"
+site_url = "https://tanya-ok.github.io/agent-security-lab/"
+repo_url = "https://github.com/tanya-ok/agent-security-lab"
+docs_dir = "docs"
+site_dir = "site"
+nav = [
+  { "Overview" = "index.md" },
+  { "Try the demos" = "manual-walkthrough.md" },
+  { "Architecture" = "architecture.md" },
+  { "Passkey sign-in" = "operator-passkey.md" },
+  { "Service operations" = "service-operations.md" },
+  { "Restart recovery" = "restart-recovery.md" },
+  { "Validation" = "validation.md" },
+  { "Publication review" = "publication-plan.md" },
+  { "Portfolio PR review" = "portfolio-pr-review.md" },
+  { "Selective ports" = "selective-ports.md" },
+  { "Development models" = "development-models.md" },
+  { "Local model review" = "local-model-review.md" },
+  { "Dependency review" = "dependency-review.md" },
+  { "Engineering notes" = "articles/goodbye-sms-and-passwords.md" },
+]
+
+[project.theme]
+language = "en"
+features = ["content.code.copy", "navigation.footer", "navigation.top"]
+font = false
+
+[project.markdown_extensions]
+pymdownx.superfences.custom_fences = [
+  { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
+]

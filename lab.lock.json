@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "projects": {
+    "mcp-svid-auth": {
+      "commit": "7ecf7453723f705461c9793ed83d1d3ae1ff3db7",
+      "local_source": "mcp-svid-auth"
+    },
+    "mcp-spiffe-bridge": {
+      "commit": "2bb2813e3a6ab1915d207b3fca4498ffca4b3703",
+      "local_source": "mcp-spiffe-bridge"
+    },
+    "hipaa-fhir-mcp": {
+      "commit": "9ad0d89cef555311d71b2f886b1f23ab5a7bee6b",
+      "local_source": "hipaa-fhir-mcp"
+    },
+    "it-grc": {
+      "commit": "3fbf3cb4906789707aeb05b11ed99321be1a44be",
+      "local_source": "it-grc"
+    },
+    "engineering-os": {
+      "commit": "300c2059882728051f6830828ca127ebdb74a9d5",
+      "local_source": "engineering-os"
+    },
+    "ai-assurance": {
+      "commit": "353d374a00b43479870a6dee300dd200529cc60c",
+      "local_source": "ai-assurance"
+    }
+  }
+}

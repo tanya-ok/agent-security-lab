@@ -1,0 +1,16 @@
+sequenceDiagram
+    actor Me
+    participant Browser as Browser
+    participant Key as Authenticator
+    participant IdP as ZITADEL
+    Note over Key,IdP: Registration stores a public key at ZITADEL
+    Me->>Browser: Sign in with passkey
+    Browser->>IdP: Request authentication
+    IdP-->>Browser: Fresh challenge and RP options
+    Browser->>Key: Request assertion for this RP
+    Key->>Me: Ask for local confirmation
+    Me-->>Key: Confirm
+    Key-->>Browser: Signed assertion
+    Browser->>IdP: Submit assertion
+    IdP->>IdP: Verify signature, challenge, origin and RP
+    IdP-->>Browser: Authentication succeeds

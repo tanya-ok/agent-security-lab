@@ -1,0 +1,12 @@
+{
+  "scope": "Selected source ranges across seven repositories; not a complete audit",
+  "local_review_batches_completed": 2,
+  "external_model_api_calls": false,
+  "raw_reports_published": false,
+  "detailed_findings_published": false,
+  "publication_status": "held_pending_private_review",
+  "limits": [
+    "No certification or production-readiness claim",
+    "Internal follow-ups are not represented as resolved"
+  ]
+}

@@ -1,0 +1,2 @@
+no-git-ops: true
+dolt.auto-push: false

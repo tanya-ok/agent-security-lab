@@ -1,0 +1,54 @@
+{
+  "checked_on": "2026-10-21",
+  "current_main_refs": [
+    {
+      "repository": "mcp-svid-auth",
+      "commit": "84a38c41a5491d254962efe5862bff25e5c4b215"
+    },
+    {
+      "repository": "hipaa-fhir-mcp",
+      "commit": "61c844ae2ee78c9eb928437d8af2dcfd2671db15"
+    },
+    {
+      "repository": "mcp-spiffe-bridge",
+      "commit": "ba5a6be7eaa0d05c110bd2af46920fb72a820e34"
+    },
+    {
+      "repository": "engineering-os",
+      "commit": "abcabe10ead5151550475255ae9fbd87263d7278"
+    },
+    {
+      "repository": "it-grc",
+      "commit": "b7ac7b36fc0f875a3c7f571d2438c49b0fe336f0"
+    },
+    {
+      "repository": "ecs-contract",
+      "commit": "2094c60ca8bb28d95b32abdeb19bee07dea80615"
+    }
+  ],
+  "counts": {
+    "clean_native_merges": 6,
+    "conflicting_native_merges": 8,
+    "unrelated_histories": 5,
+    "already_identical_to_main": 1,
+    "initial_import_without_published_main": 2
+  },
+  "checks": {
+    "all_six_native_candidate_trees_equal_previously_checked_heads": true,
+    "combined_viewer_proposal_checks": "passed",
+    "remaining_five_proposal_template_gates": "passed",
+    "all_proposal_evidence_paths_exist": true,
+    "proposed_ci_job_names_match_workflow_source": true,
+    "ai_assurance_publication_static_bundle_docs_build_and_head_secret_scan": "passed"
+  },
+  "scope_limits": [
+    "No source branch was rebased or conflict resolved by this review",
+    "No GitHub CI execution is claimed",
+    "No assurance profile installation or executed evidence record",
+    "No full-portfolio or physical-authenticator rerun",
+    "Initial imports still need a repository/base arrangement",
+    "Downstream source pins must use an available reviewed published source commit"
+  ],
+  "remote_writes": false,
+  "pull_requests_created": false
+}

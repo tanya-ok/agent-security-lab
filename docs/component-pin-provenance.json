@@ -1,0 +1,10 @@
+{
+  "previous": "aba6eb823fd41023787cfe1b88caf47c922f2b8b",
+  "current": "31ccea1cb99749e49b69e6d3bc5b3350adafd314",
+  "tree": "a10364d9450fd8d75bede1e213d920a7c126c943",
+  "changed_on": "2026-10-21",
+  "reason": "Maintainer requested today for author and committer dates on unpublished squash commits",
+  "source_tree_identical": true,
+  "historical_evidence_retains_original_commit": true,
+  "remote_write": false
+}

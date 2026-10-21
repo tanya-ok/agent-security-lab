@@ -1,0 +1,7 @@
+flowchart TD
+    H["Me + passkey"] --> Z["ZITADEL authenticates me"]
+    Z --> O["OIDC result"]
+    O --> G["Viewer gate checks identity and approval"]
+    G -->|Approved| V["Security viewer"]
+    V --> R["Kubernetes permissions govern resources"]
+    G -->|Rejected| D["Access denied"]

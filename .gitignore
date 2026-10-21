@@ -1,0 +1,23 @@
+.data/
+.venv/
+__pycache__/
+*.pyc
+.ruff_cache/
+dist/
+AGENTS.local.md
+!.beads/
+.beads/*
+!.beads/config.yaml
+!.beads/issues.jsonl
+
+# Beads / Dolt files (added by bd init)
+.dolt/
+*.db
+.beads-credential-key
+node_modules/
+.claude/
+
+# macOS folder metadata
+.DS_Store
+
+/site/

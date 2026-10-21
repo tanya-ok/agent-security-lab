@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "scope": "Recorded local synthetic demo run after SSO configuration, before publication metadata cleanup",
+  "state": "passed",
+  "command_stages": 24,
+  "checks": {
+    "security_scenarios": 18,
+    "isolated_webauthn_oidc": 11,
+    "closed_google_provider": 4,
+    "independent_package_demos": 2,
+    "python_regressions": 131,
+    "javascript_regressions": 5
+  },
+  "owner_profile_preserved": true,
+  "authentication_method_metadata_preserved": true,
+  "sso": {
+    "configuration_retained": true,
+    "subject_binding_verified": true,
+    "pkce_s256_redirect_verified": true,
+    "issuer_backchannel_verified": true,
+    "invalid_token_exchange_rejected": true,
+    "recovery_account_retained": true
+  },
+  "final_live_access_verified": true,
+  "all_source_pins_verified": true,
+  "limits": [
+    "The existing owner passkey and console/GRC SSO were manually accepted earlier; no new physical ceremony in this run.",
+    "No real Google login, cloud deployment or production/compliance claim.",
+    "No assurance profiles installed; Engineering OS uses fictional data.",
+    "No remote writes or GitHub CI execution.",
+    "Source locks, AI Assurance runtime and Pages workflows changed after this recorded run; those changes have separate local checks, with no new full live acceptance."
+  ]
+}

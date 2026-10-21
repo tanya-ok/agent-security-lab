@@ -1,0 +1,12 @@
+{
+  "project": "ai-assurance",
+  "previous_commit": "d61186dcc3388c9cc761e4ec638ec5ce26a411ae",
+  "current_commit": "a8125e47ede8f669cce66b994961bc8df4b8e10f",
+  "source_tree": "dbd5c23a2de3416cc48156c5f34ccc1eade3566f",
+  "source_tree_identical": true,
+  "changed_on": "2026-10-21",
+  "reason": "Unpublished source history consolidated into one commit with current author and committer dates",
+  "remote_write": false,
+  "historical_evidence_retains_original_pins": true,
+  "new_runtime_scenarios_claimed": false
+}

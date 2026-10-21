@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "checked_at": "2026-10-15T08:38:47.875439+00:00",
+  "scope": "Local synthetic browser acceptance; not production or compliance attestation",
+  "demo": {
+    "run_id": "20261015T083304Z-e03516",
+    "operation": "demo",
+    "state": "passed",
+    "started_at": "2026-10-15T08:33:04.925568+00:00",
+    "finished_at": "2026-10-15T08:38:37.863665+00:00",
+    "source_pins": {
+      "mcp-svid-auth": {
+        "commit": "84a38c41a5491d254962efe5862bff25e5c4b215",
+        "local_source": "mcp-svid-auth"
+      },
+      "mcp-spiffe-bridge": {
+        "commit": "ba5a6be7eaa0d05c110bd2af46920fb72a820e34",
+        "local_source": "mcp-spiffe-bridge"
+      },
+      "hipaa-fhir-mcp": {
+        "commit": "61c844ae2ee78c9eb928437d8af2dcfd2671db15",
+        "local_source": "hipaa-fhir-mcp"
+      },
+      "it-grc": {
+        "commit": "b7ac7b36fc0f875a3c7f571d2438c49b0fe336f0",
+        "local_source": "it-grc"
+      },
+      "engineering-os": {
+        "commit": "abcabe10ead5151550475255ae9fbd87263d7278",
+        "local_source": "engineering-os"
+      },
+      "ai-assurance": {
+        "commit": "d61186dcc3388c9cc761e4ec638ec5ce26a411ae",
+        "local_source": "ai-assurance"
+      }
+    },
+    "security_scenarios": 18,
+    "identity_checks": 11,
+    "google_setup_checks": 4,
+    "dashboard": {
+      "fixture": true,
+      "nodes": 30
+    },
+    "artifacts": {
+      "security": {
+        "path": "artifacts/security.json",
+        "sha256": "b4dd7cb559194b99f220e02365821722dd5ee67ba8d97d7aae4cfb3c0d08c018"
+      },
+      "identity": {
+        "path": "artifacts/identity.json",
+        "sha256": "a8bc8bd5a7d936bec4cea6d31844af66181897970a1f66282045a9460785a2e9"
+      },
+      "google-setup": {
+        "path": "artifacts/google-setup.json",
+        "sha256": "4e3d2604a64f024871691a63aa3c7ba1e2dd2bb4002bb91f2032d4e35a0cb520"
+      }
+    },
+    "grc_input_sha256": "b4dd7cb559194b99f220e02365821722dd5ee67ba8d97d7aae4cfb3c0d08c018",
+    "limits": [
+      "No real Google login or physical passkey enrollment",
+      "No cloud deployment, model API calls or certification",
+      "AI Assurance control experiment only; no profile installation",
+      "Engineering OS uses fixture data; no private vault or RAG model"
+    ]
+  },
+  "passed_steps": 19,
+  "lifecycle": [
+    {
+      "action": "cancel",
+      "run_id": "20261015T082912Z-5e04f8",
+      "operation": "demo",
+      "state": "failed",
+      "started_at": "2026-10-15T08:29:12.639772+00:00",
+      "finished_at": "2026-10-15T08:29:19.990745+00:00"
+    },
+    {
+      "action": "stop",
+      "run_id": "20261015T082919Z-3a3321",
+      "operation": "down",
+      "state": "passed",
+      "started_at": "2026-10-15T08:29:19.991703+00:00",
+      "finished_at": "2026-10-15T08:29:46.718418+00:00"
+    },
+    {
+      "action": "start",
+      "run_id": "20261015T083029Z-7d1cd2",
+      "operation": "up",
+      "state": "passed",
+      "started_at": "2026-10-15T08:30:29.063769+00:00",
+      "finished_at": "2026-10-15T08:32:37.379216+00:00"
+    }
+  ],
+  "checks": {
+    "unit_tests": 29,
+    "ruff_lint_and_format": true,
+    "javascript_syntax": true,
+    "live_concurrent_start_http": 409,
+    "live_foreign_origin_http": 403,
+    "live_unknown_action_http": 400,
+    "cli_mutation_refused_while_browser_busy": true,
+    "panel_reload_preserves_run": true,
+    "retained_prior_artifact_hashes_verified": true,
+    "original_sources_clean_and_snapshot_pins_verified": true,
+    "default_lima_states_unchanged": true,
+    "git_diff_check": true
+  },
+  "report_sha256": "99d4b8179550396fc2c40947eba01dd8a08369c7f4340c980368e3c8d858cd89"
+}

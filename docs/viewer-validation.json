@@ -1,0 +1,81 @@
+{
+  "captured_at": "2026-10-20T08:28:10.237040+00:00",
+  "component": "mcp-svid-auth",
+  "base_commit": "84a38c41a5491d254962efe5862bff25e5c4b215",
+  "fix_commit": "aba6eb823fd41023787cfe1b88caf47c922f2b8b",
+  "method": "working-tree integration and fresh-browser acceptance, then verified matching committed plugin bytes",
+  "mode": "separate disposable VM; standalone read-only viewer without a human identity profile",
+  "component_checks": {
+    "python_passed": 560,
+    "javascript_passed": 8,
+    "ruff": "passed",
+    "mypy": "passed",
+    "strict_docs": "passed",
+    "identifier_checks": "passed",
+    "secret_scan": "passed"
+  },
+  "integration_scenarios_passed": 18,
+  "report_sha256": "c33f4d7159c0aa7c641cd2a497f8e2f6e0fe04e27c5502915b9cdf4df542331a",
+  "browser_views": [
+    {
+      "view": "Pods",
+      "rows_observed": 10
+    },
+    {
+      "view": "Deployments",
+      "rows_observed": 8
+    },
+    {
+      "view": "Services",
+      "rows_observed": 7
+    }
+  ],
+  "http_checks": [
+    {
+      "check": "namespaced Pods",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "namespaced Services",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "namespaced Deployments",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "cluster-wide Pods",
+      "status": 403,
+      "passed": true
+    },
+    {
+      "check": "Nodes",
+      "status": 403,
+      "passed": true
+    },
+    {
+      "check": "Secrets",
+      "status": 403,
+      "passed": true
+    },
+    {
+      "check": "unrelated namespace",
+      "status": 403,
+      "passed": true
+    },
+    {
+      "check": "pod mutation",
+      "status": 405,
+      "passed": true
+    }
+  ],
+  "rbac_widened": false,
+  "physical_passkey_retested_after_fix": false,
+  "original_identity_runtime_preserved": true,
+  "original_vms_remained_stopped": true,
+  "validation_namespaces_removed": true,
+  "validation_vm_stopped": true
+}
