@@ -2,27 +2,27 @@
   "schema": 1,
   "projects": {
     "mcp-svid-auth": {
-      "commit": "5797e009cb0b6bbb604e5a653d1479c5e8cc5c1d",
+      "commit": "6841bda6decae5bce20f015d76c7d320d5c40f61",
       "local_source": "mcp-svid-auth"
     },
     "mcp-spiffe-bridge": {
-      "commit": "2bb2813e3a6ab1915d207b3fca4498ffca4b3703",
+      "commit": "3a77e55f77e2a6fbce8764fa195a4dfdd301dfd2",
       "local_source": "mcp-spiffe-bridge"
     },
     "hipaa-fhir-mcp": {
-      "commit": "9ad0d89cef555311d71b2f886b1f23ab5a7bee6b",
+      "commit": "e9531814935e810acdb038f067c743d98690f90e",
       "local_source": "hipaa-fhir-mcp"
     },
     "it-grc": {
-      "commit": "3fbf3cb4906789707aeb05b11ed99321be1a44be",
+      "commit": "1f7c4abfedaad3cc6b1dac41f6bc926bb35a526c",
       "local_source": "it-grc"
     },
     "engineering-os": {
-      "commit": "300c2059882728051f6830828ca127ebdb74a9d5",
+      "commit": "f93315872f0bf08c1a6150144a33e360039a0515",
       "local_source": "engineering-os"
     },
     "ai-assurance": {
-      "commit": "353d374a00b43479870a6dee300dd200529cc60c",
+      "commit": "f08fccda24a73f142f4f5a97b15bb1582460954f",
       "local_source": "ai-assurance"
     }
   }

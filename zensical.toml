@@ -20,7 +20,9 @@ nav = [
   { "Development models" = "development-models.md" },
   { "Local model review" = "local-model-review.md" },
   { "Dependency review" = "dependency-review.md" },
+  { "OWASP NHI mapping" = "owasp-nhi-mapping.md" },
   { "Engineering notes" = "articles/goodbye-sms-and-passwords.md" },
+  { "Passkeys and short-lived credentials" = "articles/passkeys-and-short-lived-credentials.md" },
 ]
 
 [project.theme]

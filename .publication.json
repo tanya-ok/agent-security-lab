@@ -52,7 +52,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "f36f092bcbff1644dc5b54a426f7a9c5feeef2e7cd41b46903b6a5c1c3a7764b"
+      "sha256": "72dcb6b47d907008882d63ff2f1069bace48fdb717f79aa1b3987c91cb806d29"
     },
     {
       "path": "SECURITY.md",
@@ -99,6 +99,14 @@
       "sha256": "0391a8fe3740c15863687899b82f87e73bff4615155d3494b2d020d9087a1280"
     },
     {
+      "path": "docs/articles/passkeys-and-short-lived-credentials-checks.md",
+      "sha256": "8cada3e6d2e0deee6b9e70f3ddb39879d0a08792a6c71299f238f6614e6e5515"
+    },
+    {
+      "path": "docs/articles/passkeys-and-short-lived-credentials.md",
+      "sha256": "483865f5fb9f63f883cf4335f3a6589f521737c36409ae4f77691c65708541ab"
+    },
+    {
       "path": "docs/browser-controls-validation.json",
       "sha256": "b8ef76fd3df0a9005dd9bf3951189826e01b8da526600cc96a7eb86864b05e23"
     },
@@ -141,6 +149,10 @@
     {
       "path": "docs/operator-passkey.md",
       "sha256": "1496ebe8eef2b8b8583100452ab00a9a09e4e992cebf61daca2d5da300b07f6c"
+    },
+    {
+      "path": "docs/owasp-nhi-mapping.md",
+      "sha256": "bb2bdbc52052e05afd68a88e61431c646512c1e7cc17a4b98dc98c427673d3c5"
     },
     {
       "path": "docs/portfolio-pr-review.md",
@@ -244,7 +256,7 @@
     },
     {
       "path": "lab.lock.json",
-      "sha256": "5ded0e15cb1f3dbd84032d17ff0e0510ed78fe6c9f3dee676aec975d8d45b7f8"
+      "sha256": "e9adb6d85fdb10d40fdeccc4110fc248ee1330a567718fe8200c686c33bb3138"
     },
     {
       "path": "package.json",
@@ -388,7 +400,7 @@
     },
     {
       "path": "zensical.toml",
-      "sha256": "c4c64ac4dd2a96dc2bd58dae37ad6e8c9ae5cc88d46b867e891583ba61b5a3cf"
+      "sha256": "8390b7fc0c7510363afb96d6df8f69398be9a60adb7854e199e5196ac7f88bd8"
     }
   ]
 }

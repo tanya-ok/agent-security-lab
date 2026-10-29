@@ -6,7 +6,7 @@
 |---|---|
 | Problem | AI agents call tools with static API keys and broad grants. One poisoned tool response or leaked key turns into access to everything the key can reach. |
 | What the lab shows | Agents authenticate with SPIFFE workload identity, receive 5-minute tokens bound to one resource and a narrow scope set, and humans sign in with passkeys. When an agent obeys an injected instruction, out-of-scope calls are denied and recorded. |
-| Evidence | Asserted scenarios that fail on unexpected success, credential-free reports and hash-chained audit lines: [validation](docs/validation.md), the `mcp-svid-auth` tool response poisoning scenario (`make attack-scenarios`), and the [remaining long-lived secrets](#remaining-long-lived-secrets). |
+| Evidence | Asserted scenarios that fail on unexpected success, credential-free reports and hash-chained audit lines: [validation](docs/validation.md), the `mcp-svid-auth` tool response poisoning scenario (`make attack-scenarios`), opt-in RFC 8693 token exchange that can only narrow scope, the [OWASP NHI Top 10 mapping](docs/owasp-nhi-mapping.md), and the [remaining long-lived secrets](#remaining-long-lived-secrets). |
 
 Containment is not detection: the lab does not detect or strip prompt injection, and an agent can still be steered inside its own grant.
 
