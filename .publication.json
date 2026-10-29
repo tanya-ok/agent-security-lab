@@ -272,11 +272,15 @@
     },
     {
       "path": "src/agent_security_lab/cli.py",
-      "sha256": "fd55c533defe6d0337800d66efbd5a856fb4e5401037365a5cc32ce2f89af61d"
+      "sha256": "554226d4318f99c5874bee5847de380e126e7c38ee9cdbde784dfb10ac4d9302"
     },
     {
       "path": "src/agent_security_lab/credentials.py",
       "sha256": "1e6a70798999841a3db39489cca95344e44f52825bdd5cbb68d5b0611a25046f"
+    },
+    {
+      "path": "src/agent_security_lab/history.py",
+      "sha256": "26d235fa0a64dde0ee441a1733059f0dc4f37fadd13b3e0bedb891a38da64555"
     },
     {
       "path": "src/agent_security_lab/identity_access.py",
@@ -311,12 +315,16 @@
       "sha256": "f131163ddd44486e73b6d7cbd4afc6e93a5f6c35f63d39e7a11d20ecbe6b8ad0"
     },
     {
+      "path": "tests/test_history.py",
+      "sha256": "e3417c9cb73f2fe36e0dece9412e9bb80d8a95d372e30b3ad1f211db04398cef"
+    },
+    {
       "path": "tests/test_identity_access.py",
       "sha256": "0b387fe26208ba8aa88f0d3590eb2d0f30170b9e84940b9458653e4dae4b3d1a"
     },
     {
       "path": "tests/test_launcher.py",
-      "sha256": "c2b54b5d2bd5a9865efbc2bc7155d7bfa907cf56dfb88430b7c027c56e290f30"
+      "sha256": "d18f35040f4b66da61b002bf4328afeb0e5858d24892e987abc2fb1ce52566f8"
     },
     {
       "path": "tests/test_publication.py",
@@ -352,15 +360,15 @@
     },
     {
       "path": "uv.lock",
-      "sha256": "300c71fce2c4aa16ce51993046f9b44cddba7bb09795ac309b984eb024791919"
+      "sha256": "ec34fe0f3c4f54e22a27f9dd96669f3afdefb6a76a801764ffce0212e1646266"
     },
     {
       "path": "web/app.css",
-      "sha256": "3dbe8921fe9623f8dfc583e856a23a4dd23859aa5022ec7908f478be32c167a0"
+      "sha256": "d9cb941e16617f02946b3d06de50979f1613aa7c8d78c9e9802052744f63aba2"
     },
     {
       "path": "web/app.js",
-      "sha256": "c9852ddece275648730c0b71870808e417b3610a9f1984d35419c58b6682adba"
+      "sha256": "2a30d1353d5e5a1b2edcba5375b2d8fb82267333dd9102b905de876fd70be50a"
     },
     {
       "path": "web/credentials.mjs",
@@ -368,7 +376,7 @@
     },
     {
       "path": "web/index.html",
-      "sha256": "5974b84db0af975affbb4e6692f0bd8c8c7f9dfa659da304664aeb6f1554e092"
+      "sha256": "f9294e813213b39a0c0117ebc79d2e9e47ae99b29d47477707a341fd3d7767c0"
     },
     {
       "path": "web/runtime.html",
