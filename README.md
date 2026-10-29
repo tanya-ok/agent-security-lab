@@ -2,6 +2,14 @@
 
 **Passkeys for people. Short-lived identity for agents. Evidence you can inspect.**
 
+| For a CISO | |
+|---|---|
+| Problem | AI agents call tools with static API keys and broad grants. One poisoned tool response or leaked key turns into access to everything the key can reach. |
+| What the lab shows | Agents authenticate with SPIFFE workload identity, receive 5-minute tokens bound to one resource and a narrow scope set, and humans sign in with passkeys. When an agent obeys an injected instruction, out-of-scope calls are denied and recorded. |
+| Evidence | Asserted scenarios that fail on unexpected success, credential-free reports and hash-chained audit lines: [validation](docs/validation.md), the `mcp-svid-auth` tool response poisoning scenario (`make attack-scenarios`), and the [remaining long-lived secrets](#remaining-long-lived-secrets). |
+
+Containment is not detection: the lab does not detect or strip prompt injection, and an agent can still be steered inside its own grant.
+
 One local panel for six security projects: start demos, browse Kubernetes, inspect
 health and versions, and follow the evidence. Apache-2.0.
 
@@ -59,6 +67,24 @@ are a related reference for gather/synthesis and generator/critic workflows.
 This script does not use Google ADK, implement a Google-prescribed voting rule,
 or treat model agreement as approval. Local bulk reading and drafts stay local;
 code inspection and tests substantiate any accepted finding.
+
+## Remaining long-lived secrets
+
+Agent credentials in the tested flow are short-lived: JWT-SVIDs and access tokens
+live at most 5 minutes and token signing keys stay in process memory. These
+secrets are not short-lived:
+
+| Secret | Where | Lifetime |
+|---|---|---|
+| Operator and viewer passkeys | Authenticator devices | Durable by design; recovery is a second enrolled key |
+| ZITADEL masterkey, database passwords, cookie secret and first administrator password | Kubernetes Secret in the owned identity namespace | Until the identity profile is recreated; no rotation |
+| ZITADEL bootstrap owner and Login PATs | Owned identity profile | Two days; the owner PAT has broad privileges and is not renewed automatically |
+| Google OAuth client secret (optional) | Owner-only ignored file, only when Google sign-in is configured | Until rotated at the provider |
+| IT GRC administrator password | Owner-only ignored file in `it-grc` | Until rotated with `grc-rotate-admin` |
+| CISO Assistant OIDC signing key | Kubernetes Secret in the IT GRC VM | Until regenerated |
+| k3s administrator kubeconfig | Inside each VM, mode 0600 | k3s client certificate validity; not tracked by the lab |
+
+The IT GRC bridge token lasts one day. None of these secrets is committed or printed.
 
 ## Try it locally
 

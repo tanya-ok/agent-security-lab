@@ -2,7 +2,7 @@
   "schema": 1,
   "projects": {
     "mcp-svid-auth": {
-      "commit": "7ecf7453723f705461c9793ed83d1d3ae1ff3db7",
+      "commit": "5797e009cb0b6bbb604e5a653d1479c5e8cc5c1d",
       "local_source": "mcp-svid-auth"
     },
     "mcp-spiffe-bridge": {

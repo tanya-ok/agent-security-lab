@@ -52,7 +52,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "e04a946361d0397ff1aabd9b13f2b4ea27e4b6bba563e47270b50ff4a26ee0a1"
+      "sha256": "f36f092bcbff1644dc5b54a426f7a9c5feeef2e7cd41b46903b6a5c1c3a7764b"
     },
     {
       "path": "SECURITY.md",
@@ -244,7 +244,7 @@
     },
     {
       "path": "lab.lock.json",
-      "sha256": "063f4ea87efc0402aed4c2be6d99e267e810dc0b832eac221e97328e269f0d5c"
+      "sha256": "5ded0e15cb1f3dbd84032d17ff0e0510ed78fe6c9f3dee676aec975d8d45b7f8"
     },
     {
       "path": "package.json",
