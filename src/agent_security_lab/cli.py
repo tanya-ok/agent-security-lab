@@ -47,6 +47,14 @@ PORTS = {
 }
 
 
+def pnpm_install(repo):
+    # Without its own workspace file a component would join the lab root workspace.
+    args = ["pnpm", "install", "--frozen-lockfile"]
+    if not (repo / "pnpm-workspace.yaml").exists():
+        args.append("--ignore-workspace")
+    return args
+
+
 class LabError(ValueError):
     """Fixed public error messages; raw logs stay private."""
 
@@ -422,10 +430,10 @@ class Lab:
         )
         for name in ("mcp-spiffe-bridge", "hipaa-fhir-mcp"):
             repo = self.verify(name)
-            self.run(name + ": frozen install", ["pnpm", "install", "--frozen-lockfile"], repo)
+            self.run(name + ": frozen install", pnpm_install(repo), repo)
             self.run(name + ": build", ["pnpm", "build"], repo)
         repo = self.verify("engineering-os") / "dashboard"
-        self.run("Engineering OS: frozen install", ["pnpm", "install", "--frozen-lockfile"], repo)
+        self.run("Engineering OS: frozen install", pnpm_install(repo), repo)
         self.run("Engineering OS: build dashboard", ["pnpm", "run", "build"], repo)
 
     def service_file(self, role):
@@ -908,6 +916,7 @@ class Controls:
 
 
 def handler(lab, controls):
+    from . import history
     from .runtime import Monitor
     from .services import Services
 
@@ -919,11 +928,13 @@ def handler(lab, controls):
         def allowed_host(self):
             return self.headers.get_all("Host") in (["127.0.0.1:18879"], ["localhost:18879"])
 
-        def respond(self, code, value, mime="application/json"):
+        def respond(self, code, value, mime="application/json", download=None):
             data = value if isinstance(value, bytes) else json.dumps(value).encode("utf-8")
             self.send_response(code)
             self.send_header("Content-Type", mime + "; charset=utf-8")
             self.send_header("Content-Length", str(len(data)))
+            if download:
+                self.send_header("Content-Disposition", f'attachment; filename="{download}"')
             self.send_header("Cache-Control", "no-store")
             self.send_header("X-Content-Type-Options", "nosniff")
             self.send_header("Referrer-Policy", "no-referrer")
@@ -965,6 +976,17 @@ def handler(lab, controls):
                     self.respond(200, value)
                 except (LabError, OSError, ValueError, subprocess.TimeoutExpired):
                     self.respond(503, {"error": "Local status unavailable"})
+            elif self.path == "/api/runs":
+                try:
+                    self.respond(200, {"runs": history.runs(lab.data)})
+                except (OSError, ValueError):
+                    self.respond(503, {"error": "Run history unavailable"})
+            elif self.path == "/api/diagnostic":
+                try:
+                    report = history.diagnostic(lab.data, lab.status(), lab.pins["projects"])
+                    self.respond(200, report, download="agent-security-lab-diagnostic.json")
+                except (LabError, OSError, ValueError, KeyError, subprocess.TimeoutExpired):
+                    self.respond(503, {"error": "Diagnostic report unavailable"})
             elif self.path in mapping:
                 filename, mime = mapping[self.path]
                 self.respond(200, (lab.root / filename).read_bytes(), mime)

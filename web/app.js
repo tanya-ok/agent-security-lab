@@ -62,6 +62,31 @@ async function refresh() {
     $('#control-message').textContent = 'Local controls unavailable. Keep this page open and retry shortly.';
   } finally { refreshing = false; }
 }
+async function refreshHistory() {
+  try {
+    const response = await fetch('/api/runs');
+    if (!response.ok) throw new Error('Unavailable');
+    const {runs} = await response.json();
+    if (!runs.length) return;
+    const rows = runs.map((run) => {
+      const row = document.createElement('div');
+      row.className = `step ${run.state}`;
+      const symbol = document.createElement('span');
+      symbol.className = 'symbol';
+      symbol.textContent = run.state === 'passed' ? '✓' : run.state === 'failed' ? '!' : '◌';
+      const name = document.createElement('span');
+      const failed = run.failed_step ? ` · stopped at ${run.failed_step}` : '';
+      name.textContent = `${run.operation} · ${run.steps_passed} of ${run.steps_total} steps${failed}`;
+      const time = document.createElement('time');
+      time.textContent = run.started_at ? new Date(run.started_at).toLocaleString() : '';
+      row.append(symbol, name, time);
+      return row;
+    });
+    $('#history').replaceChildren(...rows);
+  } catch {
+    $('#history').replaceChildren(Object.assign(document.createElement('p'), {textContent: 'Run history unavailable.'}));
+  }
+}
 async function act(action) {
   if (sending || !token) return;
   sending = true;
@@ -93,4 +118,6 @@ for (const action of ['start', 'demo', 'stop']) {
   $(`#${action}`).addEventListener('click', () => act(action));
 }
 refresh();
+refreshHistory();
 setInterval(refresh, 3000);
+setInterval(refreshHistory, 15000);

@@ -698,6 +698,30 @@ class LauncherTests(unittest.TestCase):
             )
             snapshot.assert_called_once()
 
+    def test_history_and_diagnostic_are_read_only_and_host_bound(self):
+        _, port = self.http_fixture()
+        run_id = "20260101T000000Z-abcdef"
+        write(
+            self.lab.data / "runs" / run_id / "report.json",
+            {"run_id": run_id, "operation": "demo", "state": "passed", "steps": []},
+        )
+        host = {"Host": "localhost:18879"}
+        code, _, body = self.request(port, method="GET", path="/api/runs", headers=host)
+        self.assertEqual(code, 200)
+        self.assertEqual([r["run_id"] for r in json.loads(body)["runs"]], [run_id])
+        status = {"runtimes": [], "ports": {}, "latest": None, "demo": None}
+        with patch.object(Lab, "status", return_value=status):
+            code, headers, body = self.request(
+                port, method="GET", path="/api/diagnostic", headers=host
+            )
+        self.assertEqual(code, 200)
+        self.assertIn("attachment", dict(headers)["Content-Disposition"])
+        self.assertEqual(json.loads(body)["kind"], "agent-security-lab-diagnostic")
+        for path in ("/api/runs", "/api/diagnostic"):
+            foreign = {"Host": "evil.example:18879"}
+            self.assertEqual(self.request(port, method="GET", path=path, headers=foreign)[0], 403)
+        self.assertFalse((self.lab.data / "latest.json").exists())
+
     def test_http_does_not_serve_logs_or_allow_foreign_hosts(self):
         controls, port = self.http_fixture()
         code, headers, raw = self.request(
