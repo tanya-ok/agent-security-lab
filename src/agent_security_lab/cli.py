@@ -47,6 +47,14 @@ PORTS = {
 }
 
 
+def pnpm_install(repo):
+    # Without its own workspace file a component would join the lab root workspace.
+    args = ["pnpm", "install", "--frozen-lockfile"]
+    if not (repo / "pnpm-workspace.yaml").exists():
+        args.append("--ignore-workspace")
+    return args
+
+
 class LabError(ValueError):
     """Fixed public error messages; raw logs stay private."""
 
@@ -422,10 +430,10 @@ class Lab:
         )
         for name in ("mcp-spiffe-bridge", "hipaa-fhir-mcp"):
             repo = self.verify(name)
-            self.run(name + ": frozen install", ["pnpm", "install", "--frozen-lockfile"], repo)
+            self.run(name + ": frozen install", pnpm_install(repo), repo)
             self.run(name + ": build", ["pnpm", "build"], repo)
         repo = self.verify("engineering-os") / "dashboard"
-        self.run("Engineering OS: frozen install", ["pnpm", "install", "--frozen-lockfile"], repo)
+        self.run("Engineering OS: frozen install", pnpm_install(repo), repo)
         self.run("Engineering OS: build dashboard", ["pnpm", "run", "build"], repo)
 
     def service_file(self, role):

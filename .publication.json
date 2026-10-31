@@ -284,7 +284,7 @@
     },
     {
       "path": "src/agent_security_lab/cli.py",
-      "sha256": "554226d4318f99c5874bee5847de380e126e7c38ee9cdbde784dfb10ac4d9302"
+      "sha256": "b55bed9a364ac0d11bc21d277a84923f9bca6e7c752b14582d7eaa64a7d0cc91"
     },
     {
       "path": "src/agent_security_lab/credentials.py",
